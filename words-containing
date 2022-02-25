@@ -1,0 +1,3 @@
+#!/bin/bash
+
+grep -E "[$1]{5}" | grep -Ev '(.).*\1'
