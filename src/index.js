@@ -1,9 +1,5 @@
-import './style';
+import * as appModule from './app/App';
 
-export default function App() {
-  return (
-    <div>
-      <h1>Hello, Cheaters!</h1>
-    </div>
-  );
-}
+const App = appModule.App;
+export default App;
+

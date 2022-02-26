@@ -1,0 +1,51 @@
+html, body {
+  font: 14px/1.21 'Helvetica Neue', arial, sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  text-align: center;
+}
+
+#what-we-know {
+  --cell-size: 1.4em;
+  --cell-gap: 2px;
+}
+
+#what-we-know .what-we-know__input {
+  font-size: 1.6em;
+  margin-right: auto;
+  text-align: center;
+}
+
+#what-we-know .what-we-know__input + .what-we-know__input {
+  margin-left: var(--cell-gap);
+}
+
+#what-we-know .what-we-know__input--1x1 {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  background-color: green;
+}
+#what-we-know .what-we-know__input--1x5 {
+  width: var(--cell-size);
+  height: calc(5 * var(--cell-size));
+  resize: none;
+  padding-left: 2px;
+  padding-right: 2px;
+  letter-spacing: 4px;
+  word-wrap: break-word;
+  background-color: orange;
+}
+#what-we-know .what-we-know__input--5x5 {
+  width: calc(5 * var(--cell-size) + 14px);
+  height: calc(5 * var(--cell-size) + 14px);
+  text-align: left;
+  padding-left: calc(0.5 * var(--cell-size));
+  padding-right: calc(0.5 * var(--cell-size));
+  padding-top: calc(0.5 * var(--cell-size));
+  padding-bottom: calc(0.5 * var(--cell-size));
+  letter-spacing: 0.9em;
+  resize: none;
+  background-color: gray;
+}
