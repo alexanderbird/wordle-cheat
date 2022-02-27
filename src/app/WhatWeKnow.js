@@ -2,18 +2,18 @@ export const WhatWeKnow = ({ updateWhatWeKnow }) => {
 
   function updateCorrectGuess(i, event) {
     const correct = [];
-    correct[i] = event.target.value.trim().substring(0, 1);
+    correct[i] = event.target.value.trim().replace(/[^a-z]/g, '').substring(0, 1);
     updateWhatWeKnow({ correct });
   }
 
   function updateIncorrectGuess(event) {
-    const incorrect = event.target.value.trim().split('').filter(x => !!x.trim());
+    const incorrect = event.target.value.trim().replace(/[^a-z]/g, '').split('').filter(x => !!x.trim());
     updateWhatWeKnow({ incorrect });
   }
 
   function updateWrongSpotInfo(i, event) {
     const wrongSpot = [];
-    wrongSpot[i] = event.target.value.trim().split('').filter(x => !!x);
+    wrongSpot[i] = event.target.value.trim().replace(/[^a-z]/g, '').split('').filter(x => !!x);
     updateWhatWeKnow({ wrongSpot });
   }
 

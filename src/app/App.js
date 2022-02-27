@@ -52,7 +52,7 @@ export const App = () => {
       });
     });
 
-  const statistics = Object.values(statisticsObject);
+  const statistics = Object.values(statisticsObject).sort((lhs, rhs) => rhs.count - lhs.count);
 
   // Phase Four
   function firstNLetters(n) {
@@ -75,12 +75,36 @@ export const App = () => {
   return (
     <div>
       <h1>Wordle Cheat 😎</h1>
+      <p>
+        Tenets:
+        <ul>
+          <li><b>No reverse engineering:</b> this cheating tool does not use any information taken directly or indirectly from inspecting the Wordle source code</li>
+          <li><b>Assist but don't automate:</b> this tool should help you cheat but not solve the Wordle automatically</li>
+        </ul>
+      </p>
+      <p>
+        Algorithm:
+        <ol>
+          <li><b>Bisect the answer space:</b> first, guess a word that would confirm or eliminate the largest possible set of words (see "Bisecting Guesses")</li>
+          <li><b>Update the word list:</b> based on what you learned from the first guess, reduce the total word list</li>
+          <li><b>Repeat</b> until you've won</li>
+
+        </ol>
+      </p>
+      <p>
+        Acknowledgements:
+        <ul>
+          <li>The word list is adapted from <a href="https://github.com/dwyl/english-words/">dwyl/english-words</a> which is published
+in the public domain (via <a href="https://github.com/dwyl/english-words/blob/master/LICENSE.md">the Unlicense</a>))</li>
+        </ul>
+      </p>
       <article id='main'>
         <WhatWeKnow updateWhatWeKnow={updateWhatWeKnow} />
         <GuessingHints mustInclude={mustInclude} filteredWords={filteredWords} filterPattern={filterPattern} />
         <LetterStatistics statistics={statistics} suggestGuessesForNLetters={suggestGuessesForNLetters} />
         <BestGuesses bestGuesses={bestGuesses} suggestGuessesForNLetters={suggestGuessesForNLetters} setNumberOfLetters={setSuggestGuessesForNLetters}/>
       </article>
+      <footer><a href="https://github.com/alexanderbird/wordle-cheat">Open source on GitHub</a></footer>
     </div>
   );
 }
