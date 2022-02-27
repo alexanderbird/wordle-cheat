@@ -95,7 +95,7 @@ export const App = () => {
         Acknowledgements:
         <ul>
           <li>The word list is adapted from <a href="https://github.com/dwyl/english-words/">dwyl/english-words</a> which is published
-in the public domain (via <a href="https://github.com/dwyl/english-words/blob/master/LICENSE.md">the Unlicense</a>))</li>
+in the public domain (via <a href="https://github.com/dwyl/english-words/blob/master/LICENSE.md">the Unlicense</a>)</li>
         </ul>
       </p>
       <article id='main'>
@@ -113,7 +113,7 @@ function mergeArrays(one, two) {
   if (!two) return one;
   const result = [];
   for (let i = 0; i < Math.max(one.length, two.length); i++) {
-    result[i] = two[i] || one[i];
+    result[i] = two[i] === undefined ? one[i] : two[i];
   }
   return result;
 }
