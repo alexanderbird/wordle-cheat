@@ -4,7 +4,8 @@ export const GuessingHints = ({ filteredWords, filterPattern, mustInclude, isCom
 
   return (
     <article id='guessing-hints'>
-      <h2>Word List</h2>
+      <h2>Possible Words</h2>
+      <p>Some of these won't be accepted by Wordle. This list is adapted from <a href="https://github.com/dwyl/english-words/">dwyl/english-words</a> (instead of reverse-engineering Wordle)</p>
       <Loadable isComputing={isComputing}>
         <div>
           <span class='guessing-hints__wordcount'>{ filteredWords.length.toLocaleString() }</span>

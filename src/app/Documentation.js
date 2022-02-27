@@ -16,12 +16,5 @@ export const Documentation = () => (
         <li><b>Repeat</b> until you've won</li>
       </ol>
     </p>
-    <p>
-      Acknowledgements:
-      <ul>
-        <li>The word list is adapted from <a href="https://github.com/dwyl/english-words/">dwyl/english-words</a> which is published
-in the public domain (<a href="https://github.com/dwyl/english-words/blob/master/LICENSE.md">Unlicense</a>)</li>
-      </ul>
-    </p>
   </div>
 );
