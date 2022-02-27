@@ -23,7 +23,6 @@ export const App = () => {
   });
   const { mustInclude, filteredWords, filterPattern, statistics, suggestGuessesForNLetters, bestGuesses } = state;
   useEffect(() => {
-    console.log('update');
     const { mustInclude, filteredWords, filterPattern } = getFilteredWords(whatWeKnow);
     const statistics = getStatistics(filteredWords);
     const bestGuesses = getBestGuesses(statistics, suggestGuessesForNLetters, filteredWords);
