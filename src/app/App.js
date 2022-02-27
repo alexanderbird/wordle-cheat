@@ -26,9 +26,9 @@ export const App = () => {
     const { mustInclude, filteredWords, filterPattern } = getFilteredWords(whatWeKnow);
     const statistics = getStatistics(filteredWords);
     const bestGuesses = getBestGuesses(statistics, suggestGuessesForNLetters, filteredWords);
-    setState({ mustInclude, filteredWords, filterPattern, statistics, suggestGuessesForNLetters, bestGuesses  });
+    setState(current => ({ ...current, mustInclude, filteredWords, filterPattern, statistics, bestGuesses }));
     setIsComputing(false);
-  }, [whatWeKnow]);
+  }, [whatWeKnow, suggestGuessesForNLetters]);
 
   const setSuggestGuessesForNLetters = n => setState(current => ({ ...current, suggestGuessesForNLetters: n }));
 
