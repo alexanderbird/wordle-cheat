@@ -95,7 +95,7 @@ export const App = () => {
         Acknowledgements:
         <ul>
           <li>The word list is adapted from <a href="https://github.com/dwyl/english-words/">dwyl/english-words</a> which is published
-in the public domain (via <a href="https://github.com/dwyl/english-words/blob/master/LICENSE.md">the Unlicense</a>)</li>
+in the public domain (<a href="https://github.com/dwyl/english-words/blob/master/LICENSE.md">Unlicense</a>)</li>
         </ul>
       </p>
       <article id='main'>
