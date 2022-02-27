@@ -7,6 +7,24 @@ h1 {
   text-align: center;
 }
 
+ul {
+  padding-left: 14px;
+}
+
+article#main {
+  display: flex;
+  flex-direction: row;
+}
+
+article#main > article {
+  background-color: #6101;
+  padding: 20px;
+}
+
+article#main > article:not(:last-child) {
+  margin-right: 10px;
+}
+
 #what-we-know {
   --cell-size: 1.4em;
   --cell-gap: 2px;
@@ -48,4 +66,23 @@ h1 {
   letter-spacing: 0.9em;
   resize: none;
   background-color: gray;
+}
+
+#letter-statistics .letter-statistics__item {
+  display: flex;
+  flex-direction: row;
+}
+#letter-statistics .letter-statistics__letter {
+  display: inline-block;
+  min-width: 1.5em;
+  text-align: center;
+}
+#letter-statistics .letter-statistics__letter--bold {
+  font-weight: bold;
+  background-color: #FF02;
+}
+#letter-statistics .letter-statistics__count {
+  display: inline-block;
+  text-align: right;
+  min-width: 4em;
 }
