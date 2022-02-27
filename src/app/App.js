@@ -69,7 +69,6 @@ export const App = () => {
       const numberOfMatchingLetters = lettersForBestGuess.filter(letter => candidate.indexOf(letter) >= 0).length;
       return numberOfMatchingLetters >= 5;
     });
-    console.log({ lettersForBestGuess, bestGuesses });
     setBestGuesses(bestGuesses);
   }, [whatWeKnow, suggestGuessesForNLetters]);
 
