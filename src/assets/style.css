@@ -32,6 +32,10 @@ footer > * {
   margin: auto;
 }
 
+.loader {
+  margin: 20px 0;
+}
+
 article#main {
   display: flex;
   flex-direction: row;

@@ -1,3 +1,4 @@
+import { Loadable } from './Loadable';
 const NumberPicker = ({ setNumberOfLetters, value }) => (
   <select onChange={x => setNumberOfLetters(Number(x.target.value))}>
     <option value="5" selected={value === 5}>5</option>
@@ -14,7 +15,7 @@ const NumberPicker = ({ setNumberOfLetters, value }) => (
   </select>
    
 )
-export const BestGuesses = ({ suggestGuessesForNLetters, bestGuesses, setNumberOfLetters }) => {
+export const BestGuesses = ({ suggestGuessesForNLetters, bestGuesses, setNumberOfLetters, isComputing }) => {
   return (
     <article id='best-guesses'>
       <h2>Bisecting Guesses</h2>
@@ -22,9 +23,11 @@ export const BestGuesses = ({ suggestGuessesForNLetters, bestGuesses, setNumberO
         Words containing 5 of the <NumberPicker setNumberOfLetters={setNumberOfLetters} value={suggestGuessesForNLetters} /> most common letters
         amongst the possible words
       </div>
-      <ul>
-        { bestGuesses.map(x => <li>{x}</li>) }
-      </ul>
+      <Loadable isComputing={isComputing}>
+        <ul>
+          { bestGuesses.map(x => <li>{x}</li>) }
+        </ul>
+      </Loadable>
     </article>
   );
 }
