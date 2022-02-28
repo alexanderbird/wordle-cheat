@@ -1,6 +1,7 @@
 
 export const Documentation = () => (
   <div>
+    <p>An interactive tool to help you cheat at Wordle on hard mode</p>
     <p>
       Tenets:
       <ul>
