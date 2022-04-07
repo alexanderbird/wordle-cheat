@@ -28,7 +28,7 @@ export const WhatWeKnow = ({ updateWhatWeKnow }) => {
   function updateCorrectGuess(i, event) {
     const correct = [];
     correct[i] = event.target.value.trim().toLowerCase().replace(/[^a-z]/g, '').substring(0, 1);
-    nextIncorrectInput() && nextCorrectInput().current.focus()
+    nextCorrectInput()?.current?.focus()
     updateWhatWeKnow({ correct });
   }
 
@@ -40,7 +40,7 @@ export const WhatWeKnow = ({ updateWhatWeKnow }) => {
   function updateWrongSpotInfo(i, event) {
     const wrongSpot = [];
     wrongSpot[i] = event.target.value.trim().toLowerCase().replace(/[^a-z]/g, '').split('').filter(x => !!x);
-    nextWrongSpotInput() && nextWrongSpotInput().current.focus()
+    nextWrongSpotInput()?.current?.focus()
     updateWhatWeKnow({ wrongSpot });
   }
 
